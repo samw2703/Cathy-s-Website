@@ -12,5 +12,6 @@ namespace CathysWebsite.Models
         public string Description { get; set; }
         public DateTime DateWritten { get; set; }
         public DateTime DateAdded { get; set; }
+        public string Imagepath { get; set; }
     }
 }
