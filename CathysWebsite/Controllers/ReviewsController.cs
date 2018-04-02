@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CathysWebsite.Controllers
 {
-    public class ReviewController : Controller
+    public class ReviewsController : Controller
     {
         // GET: Review
         public ActionResult Index()
