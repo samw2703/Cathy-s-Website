@@ -25,7 +25,7 @@ namespace CathysWebsite
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-united.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }
