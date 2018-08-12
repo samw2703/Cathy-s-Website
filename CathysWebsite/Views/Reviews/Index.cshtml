@@ -6,23 +6,36 @@
 
 <h2>Reviews</h2>
 <div style="width:100%;background-color:aqua;">
-    <ul id="reviewsList" style="background-color:green;list-style-type:none;">
+    <ul id="reviewsList" style="list-style-type:none;">
         @foreach (CathysWebsite.Models.Review review in Model)
         {
-            <li style="width:30%; background-color:red; float:left; padding-right:10px;">
-                <h3>@review.Title</h3>
-                <a href="@review.Link">
-                    <div class="ReviewLinkContainer" style="background-color:darkorange;max-height:100%;max-width:100%;">
-                        <img src="@review.Imagepath" />
-                        <p>@review.Description</p>
-                    </div>
-                </a>
+            <li style="width:30%; float:left; padding-right:10px;">
+                <div class="ReviewContainer" style="max-height: 300px; overflow: hidden;">
+                    <h3>@review.Title</h3>
+                    <a href="@review.Link" style="">
+                        <div class="ReviewLinkContainer" style="max-width:100%;">
+                            <img src="../@review.Imagepath" />
+                            <p>@review.Description</p>
+                        </div>
+                    </a>
+
+                </div>
             </li>
+
         }
     </ul>
 </div>
 
 
 <script>
-
+    //fwindow.onload = function () {
+      //  var reviews = document.getElementsByClassName("ReviewContainer");
+        //for (var i = 0; i < reviews.length; i++) {
+          //  var heightOfHeading = getComputedStyle(reviews[i].getElementsByTagName("h3")[0]).getPropertyValue("height");
+            //var pixelValue = parseInt(heightOfHeading.substring(0, heightOfHeading.length - 2));
+            //reviews[i].getElementsByClassName("ReviewLinkContainer")[0].setAttribute("style", "height:" + (300 - heightOfHeading).toString() + "px");
+            //reviews[i].getElementsByClassName("ReviewLinkContainer")[0].style.height =
+      //          (300 - pixelValue).toString() + "px";
+        //}
+    //};
 </script>

@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201804021544337_AddLinkToReview.Designer.cs">
       <DependentUpon>201804021544337_AddLinkToReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808120757139_AddMoreReviewsTestData.cs" />
+    <Compile Include="Migrations\201808120757139_AddMoreReviewsTestData.Designer.cs">
+      <DependentUpon>201808120757139_AddMoreReviewsTestData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -338,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804021544337_AddLinkToReview.resx">
       <DependentUpon>201804021544337_AddLinkToReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120757139_AddMoreReviewsTestData.resx">
+      <DependentUpon>201808120757139_AddMoreReviewsTestData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
