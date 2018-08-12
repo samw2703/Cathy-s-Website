@@ -23,5 +23,10 @@ namespace CathysWebsite.Controllers
 
             return View(reviews);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
