@@ -28,5 +28,15 @@ namespace CathysWebsite.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(Review review)
+        {
+            review.DateAdded = DateTime.Now;
+            _context.Reviews.Add(review);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

@@ -5,8 +5,8 @@
 }
 
 <h2>Reviews</h2>
-<a type="button" href="#">Add</a>
-<div style="width:100%;background-color:aqua;">
+<a type="button" href="/Reviews/Create">Add</a>
+<div style="width:100%;">
     <ul id="reviewsList" style="list-style-type:none;">
         @foreach (CathysWebsite.Models.Review review in Model)
         {
@@ -22,21 +22,6 @@
 
                 </div>
             </li>
-
         }
     </ul>
 </div>
-
-
-<script>
-    //fwindow.onload = function () {
-      //  var reviews = document.getElementsByClassName("ReviewContainer");
-        //for (var i = 0; i < reviews.length; i++) {
-          //  var heightOfHeading = getComputedStyle(reviews[i].getElementsByTagName("h3")[0]).getPropertyValue("height");
-            //var pixelValue = parseInt(heightOfHeading.substring(0, heightOfHeading.length - 2));
-            //reviews[i].getElementsByClassName("ReviewLinkContainer")[0].setAttribute("style", "height:" + (300 - heightOfHeading).toString() + "px");
-            //reviews[i].getElementsByClassName("ReviewLinkContainer")[0].style.height =
-      //          (300 - pixelValue).toString() + "px";
-        //}
-    //};
-</script>
