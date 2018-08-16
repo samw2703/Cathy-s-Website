@@ -1,5 +1,5 @@
 ﻿@using CathysWebsite.Controllers
-@model CathysWebsite.Models.Review
+@model CathysWebsite.ViewModels.ReviewViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -19,6 +19,10 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Link)
         @Html.TextBoxFor(m => m.Link, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImagePath, "Image Path")
+        @Html.TextBoxFor(m => m.ImagePath, new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.DateWritten)

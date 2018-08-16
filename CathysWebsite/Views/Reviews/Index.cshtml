@@ -15,7 +15,7 @@
                     <h3>@review.Title</h3>
                     <a href="@review.Link" style="">
                         <div class="ReviewLinkContainer" style="max-width:100%;">
-                            <img src="../@review.Imagepath" />
+                            <img src="@($"data:image/Bmp;base64,{Convert.ToBase64String(review.Image)}")">
                             <p>@review.Description</p>
                         </div>
                     </a>
