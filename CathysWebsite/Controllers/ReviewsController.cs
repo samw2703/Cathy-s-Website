@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CathysWebsite.Models;
+using CathysWebsite.ViewModels;
+using static System.Drawing.Image;
 
 namespace CathysWebsite.Controllers
 {
@@ -30,13 +34,29 @@ namespace CathysWebsite.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Review review)
+        public ActionResult Create(ReviewViewModel viewModel)
         {
-            review.DateAdded = DateTime.Now;
+            var review = new Review
+            {
+                DateAdded = DateTime.Now,
+                DateWritten = viewModel.DateWritten,
+                Description = viewModel.Description,
+                Image = CreateImageRecord(viewModel.ImagePath),
+                Title = viewModel.Title,
+                Link = viewModel.Link
+            };
             _context.Reviews.Add(review);
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        private byte[] CreateImageRecord(string imageFilePath)
+        {
+            var image = Image.FromFile(imageFilePath);
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return stream.ToArray();
         }
     }
 }

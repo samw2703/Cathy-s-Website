@@ -244,6 +244,10 @@
     <Compile Include="Migrations\201808120757139_AddMoreReviewsTestData.Designer.cs">
       <DependentUpon>201808120757139_AddMoreReviewsTestData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808162019530_AddByteImageToReview.cs" />
+    <Compile Include="Migrations\201808162019530_AddByteImageToReview.Designer.cs">
+      <DependentUpon>201808162019530_AddByteImageToReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -252,6 +256,7 @@
     <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ReviewViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-united.css" />
@@ -346,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808120757139_AddMoreReviewsTestData.resx">
       <DependentUpon>201808120757139_AddMoreReviewsTestData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808162019530_AddByteImageToReview.resx">
+      <DependentUpon>201808162019530_AddByteImageToReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

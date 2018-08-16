@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CathysWebsite.Models
+namespace CathysWebsite.ViewModels
 {
-    public class Review
+    public class ReviewViewModel
     {
         public int Id { get; set; }
 
@@ -15,9 +15,7 @@ namespace CathysWebsite.Models
 
         public DateTime DateWritten { get; set; }
 
-        public DateTime DateAdded { get; set; }
-
-        public byte[] Image { get; set; }
+        public string ImagePath { get; set; }
 
         public string Link { get; set; }
     }
