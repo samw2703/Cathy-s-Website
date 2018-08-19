@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201808162019530_AddByteImageToReview.Designer.cs">
       <DependentUpon>201808162019530_AddByteImageToReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808192001598_AddAdminRole.cs" />
+    <Compile Include="Migrations\201808192001598_AddAdminRole.Designer.cs">
+      <DependentUpon>201808192001598_AddAdminRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -354,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808162019530_AddByteImageToReview.resx">
       <DependentUpon>201808162019530_AddByteImageToReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808192001598_AddAdminRole.resx">
+      <DependentUpon>201808192001598_AddAdminRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using CathysWebsite.Models;
 using CathysWebsite.ViewModels;
 using static System.Drawing.Image;
@@ -28,11 +29,13 @@ namespace CathysWebsite.Controllers
             return View(reviews);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Create(ReviewViewModel viewModel)
         {
