@@ -5,6 +5,7 @@ using System.Web;
 
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using System.Web.Configuration;
 
 namespace CathysWebsite.Models
 {
@@ -13,7 +14,7 @@ namespace CathysWebsite.Models
         public DbSet<Review> Reviews { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base(WebConfigurationManager.AppSettings["ConnectionString"], throwIfV1Schema: false)
         {
         }
 
