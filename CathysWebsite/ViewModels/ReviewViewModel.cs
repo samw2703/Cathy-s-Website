@@ -15,7 +15,7 @@ namespace CathysWebsite.ViewModels
 
         public DateTime DateWritten { get; set; }
 
-        public string ImagePath { get; set; }
+        public HttpPostedFileBase Image { get; set; }
 
         public string Link { get; set; }
     }

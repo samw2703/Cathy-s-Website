@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Security;
 using CathysWebsite.Models;
@@ -39,27 +41,35 @@ namespace CathysWebsite.Controllers
         [HttpPost]
         public ActionResult Create(ReviewViewModel viewModel)
         {
+            var imageByteArray = ConvertImageToByteArray(viewModel.Image);           
             var review = new Review
             {
                 DateAdded = DateTime.Now,
                 DateWritten = viewModel.DateWritten,
                 Description = viewModel.Description,
-                Image = CreateImageRecord(viewModel.ImagePath),
+                Image = imageByteArray,
                 Title = viewModel.Title,
                 Link = viewModel.Link
             };
             _context.Reviews.Add(review);
             _context.SaveChanges();
 
+
             return RedirectToAction(nameof(Index));
         }
 
-        private byte[] CreateImageRecord(string imageFilePath)
+        private byte[] ConvertImageToByteArray(HttpPostedFileBase file)
         {
-            var image = Image.FromFile(imageFilePath);
-            MemoryStream stream = new MemoryStream();
-            image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return stream.ToArray();
+            if (file == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                file.InputStream.CopyTo(ms);
+                byte[] array = ms.GetBuffer();
+
+                return array;
+            }
         }
     }
 }
